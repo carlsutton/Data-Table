@@ -1,0 +1,11 @@
+#  Data table  Exercise 2.12
+require(data.table)
+DT <- data.table(A=c(1,1,1,2,2), B = 1:5)
+#  Update B and and add columns C and D
+DT[, `:=`(B=B+1L, C = A+B, D = 2)]
+DT
+myCols = c("B", "C")
+DT[, (myCols) := NULL]
+DT
+DT[, 2:= NULL]
+DT

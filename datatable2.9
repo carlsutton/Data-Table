@@ -1,0 +1,15 @@
+#  Data table exercise 2.9
+require(data.table)
+A <- c("a","a","a","b","b")
+B <- 1:5
+DT <- data.table(A, B)
+DT
+DT[,Total := sum(B), by = A]
+DT
+DT[c(2,4), B := B+ 1L]
+DT
+DT[2:4,Total2 := sum(B), by = A]
+DT
+DT[,Total :=NULL]
+DT
+DT[[3]]

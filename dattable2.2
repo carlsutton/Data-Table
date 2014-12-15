@@ -1,0 +1,6 @@
+#  Data table 2.1  Using Chaining
+require(data.table)
+set.seed(1L)
+DT <- data.table(A=rep(letters[2:1], each=4L), B=rep(1:4, each=2L), C=sample(8))
+DT
+DT[,.(C = cumsum(C)), by=.(A,B)][,.(C=tail(C,2)),by=A]

@@ -1,0 +1,5 @@
+#  data table 1.5 By group 
+require(data.table)
+data(iris)
+DT[,.N,by= 10*round(Sepal.Length*Sepal.Width/10)]
+DT[, .(Count = .N), (Area = 10*round(Sepal.Length * Sepal.Width/10))]

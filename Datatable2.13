@@ -1,0 +1,15 @@
+# Data table exericse 2.13
+require(data.table)
+A <- c(2,2,3,5,2,5,5,4,4,1)
+B <- c(2,1,4,2,4,3,4,5,2,4)
+C <- c(5,2,4,1,2,2,1,2,5,2)
+D <- c(3,3,3,1,5,4,4,1,4,3)
+DT <- data.table(A,B,C,D)
+DT
+set.seed(1)
+E <- length(A)
+# For loop with set
+for (i in 2:4)
+    set(DT,sample(E,3),i, NA)
+setnames(DT,tolower(names(DT)))
+DT

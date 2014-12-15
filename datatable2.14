@@ -1,0 +1,14 @@
+#  Data table exercise 2.14
+require(data.table)
+DT <- data.table(a=letters[c(1,1,1,2,2)], b=1)
+
+DT
+#  Postfix "_2"
+setnames(DT,paste0(names(DT),"_2"))
+DT
+#  "a_2" to "A2"
+setnames(DT, "a_2", "A2")
+DT
+#  Reversing order
+setcolorder(DT,2:1)
+DT

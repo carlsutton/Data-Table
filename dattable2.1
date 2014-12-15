@@ -1,0 +1,14 @@
+#  Data table 2.0  Using Set
+set.seed(1)
+A <- c(2,2,3,5,2,5,5,4,4,1)
+B <- c(2,1,4,2,4,3,4,5,2,4)
+C <- c(5,2,4,1,2,2,1,2,5,2)
+D <- c(3,3,3,1,5,4,4,1,4,3)
+DT <- data.table(A,B,C,D)
+DT
+for (i in (2:4))
+    set(DT, sample(10,3),i,NA)
+# change column names to lower case
+setnames(DT,tolower(names(DT)))
+# print Dt to console to checkthe answer
+DT

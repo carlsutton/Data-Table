@@ -1,0 +1,5 @@
+# Data table 2.2 Chaining Iris dataset
+require(data.table)
+data(iris)
+DT <- data.table(iris)
+DT[,lapply(.SD,median),by = Species][order(-Species)]
